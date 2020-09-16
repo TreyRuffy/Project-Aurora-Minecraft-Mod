@@ -1,0 +1,85 @@
+@font-face {
+	font-family: Fairfax;
+	src: url(Fairfax.ttf);
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+
+	font-family: Fairfax;
+
+	background: black url(background.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.main-container, .background-blur {
+	padding: 24px;
+	
+	width: 640px;
+	height: 408px;
+
+	border-radius: 6px;
+}
+
+.main-container {
+	color: #EEE;
+	background-color: rgba(0, 0, 0, 0.6);
+	text-shadow: 2px 2px black;
+}
+
+.background-blur {
+	background-image: url(background.jpg);
+	background-position: center;
+	filter: blur(4px);
+}
+
+h1 {
+	margin-top: 0;
+}
+
+.step-container {
+	display: flex;
+	margin: 0 -12px;
+}
+
+.step-button {
+	position: relative;
+	flex: 1 1 0;
+	height: 197px;
+	margin: 12px;
+
+	color: #EEE;
+	text-decoration: none;
+	text-align: center;
+
+	background: linear-gradient(to bottom, rgb(32, 32, 32) 0%, rgb(8, 8, 8) 40%, rgb(8, 8, 8) 60%, rgb(32, 32, 32) 100%);
+	
+	border: 2px solid #323232;
+	border-radius: 6px;
+}
+
+.step-button.forge svg {
+	transform: translate(-50%, -50%) scale(0.8);
+}
+
+.credits {
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+	
+	color: rgba(255, 255, 255, 0.4);
+	font-size: 9pt;
+	text-shadow: 1px 1px black;
+}
+
+.center-in-parent {
+	transform: translate(-50%, -50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
