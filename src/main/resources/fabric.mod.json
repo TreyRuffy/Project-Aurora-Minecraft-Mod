@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "auroragsi",
+  "version": "${version}",
+
+  "name": "Aurora GSI",
+  "description": "Game State Integration server designed for Aurora (but could be used by other applications).",
+  "authors": [
+    "Wibble199"
+  ],
+  "contact": {
+    "homepage": "https://minecraft.curseforge.com/projects/aurora-gsi-minecraft",
+    "sources": "https://gitlab.com/aurora-gsi-minecraft"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/auroragsi/icon.png",
+  "custom":
+  {
+    "modmenu:clientsideOnly": true
+  },
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "wibble.mods.auroragsi.AuroraGSI"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.4.0"
+  }
+}
