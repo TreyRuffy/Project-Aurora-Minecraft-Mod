@@ -12,7 +12,6 @@ import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.Effects;
-import net.minecraft.util.registry.DynamicRegistries;
 
 /** Container for the Provider data and Player data. */
 public class GSINode {
@@ -114,7 +113,7 @@ public class GSINode {
                 isSneaking = player.isSneaking();
                 isRidingHorse = player.isRidingHorse();
                 isBurning = player.isBurning();
-                isInWater = player.isInWater();
+                isInWater = player.handleWaterMovement();
 
                 // Populate the player's effect map
                 for (Map.Entry<String, Effect> potion : TARGET_POTIONS.entrySet())
@@ -150,7 +149,7 @@ public class GSINode {
                 isDayTime = world.isDaytime();
                 rainStrength = world.rainingStrength;
                 isRaining = world.isRaining();
-                dimensionID = world.func_241828_r().func_230520_a_().getId(world.getDimensionType());
+                dimensionID = world.dimension.getType().getId();
             } catch (Exception ignore) {
             }
         }
