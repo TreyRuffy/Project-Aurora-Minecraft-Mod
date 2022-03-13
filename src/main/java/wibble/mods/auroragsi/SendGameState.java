@@ -11,7 +11,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 /**
  * Task that will send a single JSONified request to the Aurora HTTP server.
  */
-public class SendGameState implements Runnable{
+public class SendGameState implements Runnable {
 
     private GSINode rootNode = new GSINode();
     private Gson gson =  new Gson(); // Create a Gson that will be used to encode the object into a JSON string.

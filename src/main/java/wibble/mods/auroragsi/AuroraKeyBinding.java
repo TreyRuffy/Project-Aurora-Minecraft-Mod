@@ -1,7 +1,7 @@
 package wibble.mods.auroragsi;
 
 
-public class AuroraKeyBinding{
+public class AuroraKeyBinding {
     public int keyCode;
     public String modifier;
     public String context;
