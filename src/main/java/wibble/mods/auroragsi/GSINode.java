@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.options.ControlsOptionsScreen;
 import net.minecraft.client.gui.screen.ChatScreen;
+import net.minecraft.client.gui.screen.option.ControlsOptionsScreen;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.options.KeyBinding;
-import net.minecraft.client.render.SkyProperties;
+import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.util.registry.Registry;
 
 /** Container for the Provider data and Player data. */
 public class GSINode {
@@ -150,7 +150,7 @@ public class GSINode {
                 isRaining = world.isRaining();
                 world.isRaining();
 
-                dimensionID = world.getRegistryManager().getDimensionTypes().getRawId(world.getDimension());
+                dimensionID = world.getRegistryManager().getManaged(Registry.DIMENSION_TYPE_KEY).getRawId(world.getDimension());
             } catch (Exception ignore) {
             }
         }
@@ -171,7 +171,7 @@ public class GSINode {
                 chatGuiOpen = client.currentScreen instanceof ChatScreen;
                 keys = null;
                 if (controlsGuiOpen) {
-                    KeyBinding[] temp = client.options.keysAll;
+                    KeyBinding[] temp = client.options.allKeys;
                     List<AuroraKeyBinding> tempList = new ArrayList<>();
                     for (KeyBinding key : temp) {
                         if (!key.getTranslationKey().contains("unknown") && key.getTranslationKey().contains("keyboard")) {
